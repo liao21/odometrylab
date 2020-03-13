@@ -1,7 +1,6 @@
 odometrylab notes.txt
 
 driving about a foot, measured in linolium tiles 
-
 trial 1: 
 Encoders --     Left:  333      |       Right:  267
 special key Key.esc pressed
@@ -90,8 +89,34 @@ slippage:
 slow: left: 522, right: 518 
 fast: left: 402 right: 398
 
+left: 
 (522-402)/522		
 0.229885057		
+23% slippage 
 
+right: 
 (518-398)/518
 0.231660232
+23% slippage 
+
+
+driving 10 tiles 
+length: 10.66 tile
+    drift: left 0.5 tile 
+
+length: 9.75 tiles 
+    drift: 0.4 tile 
+
+length: 10.25
+    drift: 0.66
+
+length: 10.2
+    drift: 0.33
+    
+length: 10.15
+    drift: 0.45
+
+quotient of averages: 0.045873
+average of quotients: 0.045814
+
+either way, we have a drift of about 4.58%
