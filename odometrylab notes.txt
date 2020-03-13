@@ -1,0 +1,40 @@
+odometrylab notes.txt
+
+driving about a foot, measured in linolium tiles 
+
+trial 1: 
+Encoders --     Left:  333      |       Right:  267
+special key Key.esc pressed
+Key.esc released
+################## [ESC] -- STOP EVERYTHING NOW! ##################
+Encoders --     Left:  724      |       Right:  623
+
+
+trial 2: 
+Encoders --     Left:  645      |       Right:  641
+special key Key.esc pressed
+Key.esc released
+################## [ESC] -- STOP EVERYTHING NOW! ##################
+Encoders --     Left:  677      |       Right:  674
+
+
+trial 3: 
+Encoders --     Left:  696      |       Right:  579
+Encoders --     Left:  718      |       Right:  601
+
+
+trial 4: 
+Encoders --     Left:  693      |       Right:  642
+special key Key.esc pressed
+LEFT
+Key.esc released
+################## [ESC] -- STOP EVERYTHING NOW! ##################
+Encoders --     Left:  697      |       Right:  683
+
+
+trial 5: 
+Encoders --     Left:  670      |       Right:  664
+special key Key.esc pressed
+Key.esc released
+################## [ESC] -- STOP EVERYTHING NOW! ##################
+Encoders --     Left:  696      |       Right:  687
