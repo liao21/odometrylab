@@ -1,0 +1,17 @@
+Intro to Odometry. 
+
+    Use your lab 2 code to follow a line/loop.
+    Estimate your distance traveled using wheel encoders.
+    Compare this number to ground truth and the robot’s distance reported.
+
+
+    Deliverables: 
+
+        How many ticks on the encoder per wheel revolution while traveling slowly?
+        Estimate wheel slippage as a % by going very slow and very fast.  Is the distance measurement accurate?
+        Also note if your wheels (left vs right) behave differently.  Can you quantify it?
+
+
+Upload your results or a summary of progress.
+
+This could be a good foundation for the course project if you want to integrate optical flow and try to more realistically measure the distance of a line or loop.
