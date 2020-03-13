@@ -38,3 +38,60 @@ special key Key.esc pressed
 Key.esc released
 ################## [ESC] -- STOP EVERYTHING NOW! ##################
 Encoders --     Left:  696      |       Right:  687
+
+
+
+
+driving a wheel length at speed 50 
+trial 1: 
+Encoders --     Left:  530      |       Right:  522
+
+trial 2: 
+Encoders --     Left:  511      |       Right:  518
+
+trial 3: 
+Encoders --     Left:  524      |       Right:  514
+
+took averages in excel: left: 522, right: 518 
+
+
+driving a wheel length at speed 200 following a line 
+trial 1: 
+Encoders --     Left:  445      |       Right:  401
+
+trial 2: 
+Encoders --     Left:  415      |       Right:  445
+
+trial 3: 
+Encoders --     Left:  412      |       Right:  349
+
+
+driving a wheel length at speed 200 NOT following a line 
+trial 1: 
+    Encoders --     Left:  438      |       Right:  432
+
+trial 2: 
+    Encoders --     Left:  343      |       Right:  334
+
+trial 3: 
+    Encoders --     Left:  428      |       Right:  428
+
+trial 4: 
+    Encoders --     Left:  386      |       Right:  379
+
+trial 5: 
+    Encoders --     Left:  415      |       Right:  415    
+
+average: left: 402 right: 398
+
+
+slippage: 
+
+slow: left: 522, right: 518 
+fast: left: 402 right: 398
+
+(522-402)/522		
+0.229885057		
+
+(518-398)/518
+0.231660232

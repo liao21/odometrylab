@@ -73,19 +73,19 @@ class StateMachine():
             if self.STATE == States.ON_LINE:
                 # print("Left Sensor: {0}\t\tRight Sensor: {1}".format(self.sensors.left_sensor, self.sensors.right_sensor))
                 with socketLock:
-                    self.sock.sendall("a drive_straight(50)".encode())
+                    self.sock.sendall("a drive_straight(200)".encode())
                     self.sock.recv(128).decode()
                 sleep(.05)
 
                 # if line sensed on left
-                if self.sensors.left_sensor < 1500:  # seen black tape
-                    print("LEFT")
-                    self.STATE = States.CORRECTING_LEFT
+                # if self.sensors.left_sensor < 1500:  # seen black tape
+                #     print("LEFT")
+                #     self.STATE = States.CORRECTING_LEFT
 
-                # if line sensed on right
-                if self.sensors.right_sensor < 1500:
-                    print("RIGHT")
-                    self.STATE = States.CORRECTING_RIGHT
+                # # if line sensed on right
+                # if self.sensors.right_sensor < 1500:
+                #     print("RIGHT")
+                #     self.STATE = States.CORRECTING_RIGHT
             if self.STATE == States.CORRECTING_LEFT:
                 # spin left
                 with socketLock:
@@ -161,14 +161,14 @@ class Sensing(threading.Thread):
         self.sock = socket
         self.left_sensor = 0
         self.right_sensor = 0
-        
+
         # self.left_encoder_init = 0
         # self.right_encoder_init = 0
         self.left_encoder = 0
         self.right_encoder = 0
 
     def run(self):
-        # init = True
+        init = True
         while self.RUNNING:
             sleep(0.1)
             # Sense
@@ -180,24 +180,24 @@ class Sensing(threading.Thread):
                 self.right_sensor = int(self.sock.recv(128).decode())
 
                 #save initial encoder values
-                # if init==True:
-                #     self.sock.sendall("a left_encoder_counts".encode())
-                #     self.left_encoder_init = int(self.sock.recv(128).decode())
-                #     self.sock.sendall("a right_encoder_counts".encode())
-                #     self.right_encoder_init = int(self.sock.recv(128).decode())
+                if init==True:
+                    self.sock.sendall("a left_encoder_counts".encode())
+                    self.left_encoder_init = int(self.sock.recv(128).decode())
+                    self.sock.sendall("a right_encoder_counts".encode())
+                    self.right_encoder_init = int(self.sock.recv(128).decode())
 
-                #     #left and right encoders are 0
-                #     self.left_encoder = 0
-                #     self.right_encoder = 0
-                #     init = False
-                # else: 
+                    #left and right encoders are 0
+                    self.left_encoder = 0
+                    self.right_encoder = 0
+                    init = False
+                else: 
                     #save normalized encoder values to self.left_encoder and self.right_encoder
-                self.sock.sendall("a left_encoder_counts".encode())
-                self.left_encoder = int(self.sock.recv(128).decode())
-                self.sock.sendall("a right_encoder_counts".encode())
-                self.right_encoder = int(self.sock.recv(128).decode())
-                    # self.left_encoder = self.left_encoder - self.left_encoder_init
-                    # self.right_encoder = self.right_encoder - self.right_encoder_init
+                    self.sock.sendall("a left_encoder_counts".encode())
+                    self.left_encoder = int(self.sock.recv(128).decode())
+                    self.sock.sendall("a right_encoder_counts".encode())
+                    self.right_encoder = int(self.sock.recv(128).decode())
+                    self.left_encoder = self.left_encoder - self.left_encoder_init
+                    self.right_encoder = self.right_encoder - self.right_encoder_init
 
 
             print("Cliff Front --\tLeft: ", self.left_sensor,
